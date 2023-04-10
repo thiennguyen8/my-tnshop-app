@@ -3,10 +3,13 @@ import LoginSignup from "./LoginSignup";
 import Cart from "./Cart";
 import { Select } from "flowbite-react";
 import logo from "../Components/Logo.png";
+import { useShoppingCart } from "../Context/ShoppingCart";
 
 export default function Header() {
   const isLoggedIn = localStorage.getItem("loggedIn");
   console.log(isLoggedIn);
+
+  const { totalItems } = useShoppingCart();
 
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900 rounded-lg ">
@@ -36,13 +39,6 @@ export default function Header() {
           {isLoggedIn === "true" ? <Cart /> : <LoginSignup />}
           {/* Language--------------------------------------------------------------------- */}
           <div>
-            {/* <select
-              className="form-select border-none "
-              style={{ width: "80px" }}
-            >
-              <option value={"en"}>EN</option>
-              <option value={"vi"}>VI</option>
-            </select> */}
             <div id="select">
               <Select id="countries" required={true}>
                 <option>English</option>

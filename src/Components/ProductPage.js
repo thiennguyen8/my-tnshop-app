@@ -8,24 +8,17 @@ import { Badge } from "flowbite-react";
 import React, { useState } from "react";
 import { Alert } from "flowbite-react";
 import ProductCard2 from "./ProductCard2";
+import { useShoppingCart } from "../Context/ShoppingCart";
 
 export default function ProductPage() {
+  const { addMenu } = useShoppingCart;
   const imageURL = {
     img1: "https://salt.tikicdn.com/cache/280x280/ts/product/e0/c9/78/e028f9346e1922b0aadc750f272609c3.jpg",
     img2: "https://salt.tikicdn.com/cache/280x280/ts/product/0f/08/21/8995e74fd95c47c4ab9ef244a5559176.png",
     img3: "https://salt.tikicdn.com/cache/280x280/ts/product/ca/5d/be/0466fed7eaa6095baecd90f06419bc09.png",
     img4: "https://salt.tikicdn.com/cache/280x280/ts/product/a2/38/6c/ce008c63f4ac771550439da44f5f8ee8.png",
   };
-  const [quantity, setQuantity] = useState(1);
-  function handleIncrease() {
-    setQuantity(quantity + 1);
-  }
 
-  function handleDecrease() {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  }
   return (
     <div className="p-3 bg-white my-4 rounded-lg ">
       {/* Status bar */}
@@ -56,7 +49,7 @@ export default function ProductPage() {
           <div className="row m-0"></div>
 
           <div className="my-2 flex flex-wrap justify-center text-center items-center">
-            <Button pill={true} color="success" size="xs">
+            <Button pill={true} size="xs">
               Sharing for discount
             </Button>
           </div>
@@ -241,6 +234,7 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
+      {/* HOT DEAL */}
       <div>
         <Alert color="failure">
           <span>
