@@ -8,7 +8,7 @@ export default function Cart() {
         <Button>
           <HiShoppingCart className="mr-2 h-5 w-5" />
           Cart
-          <span className="ml-3 py-1 px-2 bg-blue-500 rounded-full ">50</span>
+          <span className="ml-3 py-1 px-2 bg-blue-500 rounded-full ">2</span>
         </Button>
       </div>
 

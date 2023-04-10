@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import logo from "../Components/Logo.png";
 
 export default function FormLogIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     // Kiểm tra xem người dùng đã đăng nhập hay chưa
@@ -38,7 +38,7 @@ export default function FormLogIn() {
       // Lưu trạng thái đăng nhập và chuyển hướng đến trang chủ
       localStorage.setItem("loggedIn", "true");
       setLoggedIn(true);
-      navigate.push("/");
+      // navigate.push("/");
     } else {
       alert("Username or password is incorrect");
     }

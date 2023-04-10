@@ -13,8 +13,8 @@ export default function Home() {
   };
 
   return (
-    <div className="py-3 px-0 bg-white my-4 rounded-lg ">
-      <div>
+    <div className=" px-0 bg-white my-4 rounded-lg ">
+      <div className="pt-0">
         <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
           <Carousel>
             <img

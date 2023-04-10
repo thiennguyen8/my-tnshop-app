@@ -12,6 +12,9 @@ import { useShoppingCart } from "../Context/ShoppingCart";
 
 export default function ProductPage() {
   const { addMenu } = useShoppingCart;
+  const handleAddMenu = () => {
+    addMenu();
+  };
   const imageURL = {
     img1: "https://salt.tikicdn.com/cache/280x280/ts/product/e0/c9/78/e028f9346e1922b0aadc750f272609c3.jpg",
     img2: "https://salt.tikicdn.com/cache/280x280/ts/product/0f/08/21/8995e74fd95c47c4ab9ef244a5559176.png",
@@ -133,7 +136,11 @@ export default function ProductPage() {
               </div>
 
               <div className="flex items-center justify-center">
-                <Button className="flex flex-grow" color="success">
+                <Button
+                  className="flex flex-grow"
+                  color="success"
+                  onClick={handleAddMenu}
+                >
                   Buy
                 </Button>
               </div>
